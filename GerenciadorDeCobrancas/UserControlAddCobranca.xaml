@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="GerenciadorDeCobrancas.UserControlAddCobranca"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GerenciadorDeCobrancas"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FFEEEEEE">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="Nome: " FontSize="19" FontWeight="Medium" Foreground="Black"/>
+            <TextBox Name="TxtBoxNome"  TextWrapping="Wrap" Width="246" BorderThickness="1" FontSize="19" Background="White"/>
+        </StackPanel>
+
+        <StackPanel Margin="0 4 0 0"  Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="Data: " FontSize="19" FontWeight="Medium" Foreground="Black"/>
+            
+            <local:MaskedTextBox Mask="00/00/0000" Width="246" BorderThickness="1" FontSize="19" BorderBrush="#89000000" Text="21/04/2021"/>
+
+        </StackPanel>
+        <StackPanel Margin="0 4 0 0" Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="Observações: " FontSize="19" FontWeight="Medium" Foreground="Black"/>
+            <RichTextBox Name="TxtBoxObservacoes" Height="75" Width="246" BorderThickness="1" FontSize="19" Background="White"/>
+        </StackPanel>
+        <Button Grid.Row="3" Grid.Column="0"  Height="30" Width="100" Content="Salvar" HorizontalAlignment="Right" Background="#FF222222"/>
+    </Grid>
+</UserControl>
